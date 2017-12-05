@@ -63,7 +63,7 @@ class EditProfileController(
     }
     else {
       csrfAddToken {
-        recentlyAuthenticated.async { implicit request =>
+        permissionAuthentication.async { implicit request =>
           consentJourneyView(
             page = ConsentJourneyPage,
             journey = journey.getOrElse("repermission"),
